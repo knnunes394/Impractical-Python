@@ -5,13 +5,21 @@ def main():
     print("Welcome to the shit show of practice programs")
     print("A random name generator with confusing choice of names")
 
-    first = ('Baby Oil', 'Bad news', 'Big burps')
+    first = []
+    
+    file = open("firstnames_impractical.txt", "r")
+    for line in file:
+        content = line.strip()
+        first.append(content)
+    file.close()
+    
+    
     last = ('Appleyard', 'Vinaigrette', 'Woolysocks')
 
     while True:
         first_name = random.choice(first)
         last_name = random.choice(last)
-        #print("\n")    
+        print("\n")    
         #Trick IDLE by using "fatal error" setting to print name in red
         print("{} {}".format(first_name,last_name), file=sys.stderr)
         #print("\n")
